@@ -13,8 +13,12 @@ Student(string id , string name):id(id) , name(name){
 //Student() = default; // permet de creer un objet dans main sans parametres
 
 Student(){
-    id = " 0000 ";
+    id = "0000";
     name = "ABC";
+}
+
+void display(){ // das une classe les fcts sont accessibles a tous les data members de la classe
+    cout << "Student : ID = " <<id << " Name = " << name << endl;
 }
 
 /*Student(string s_id , string s_name){ // id ici est un parametre du constructeur de la fct
@@ -36,8 +40,9 @@ string name;
 
 int main(){
     Student s1("1111" , "Sami");
+    s1.display();
     Student s2;
-
+    s2.display();
 
     return 0;
 }
