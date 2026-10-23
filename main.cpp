@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -20,6 +21,24 @@ Student(){
 }
 
 void display(){ // das une classe les fcts sont accessibles a tous les data members de la classe
+    cout << "Student : ID = " <<id << " Name = " << name << endl;
+    if (!empty(grades)){
+        cout << "Grades : " << endl;
+        for (auto g : grades){
+            cout << g << " ";
+        }
+    }cout << endl;
+}
+
+
+void addGrade(double grade){
+    grades.push_back(grade);
+}
+
+void addGrade(double grade[] , int n){ // je peux faire surcharge
+    for (int i = 0 ; i < n ; ++i){
+        grades.push_back(grade[i]);
+    }
     cout << "Student : ID = " <<id << " Name = " << name << "Age = " << age << endl;
 }
 
@@ -34,6 +53,7 @@ void display(){ // das une classe les fcts sont accessibles a tous les data memb
 private: // je mets les donnees
 string id; //data member ou attribut
 string name;
+vector<double> grades;
 int age;
 
 };
@@ -43,9 +63,19 @@ int age;
 
 int main(){
     Student s1("1111" , "Sami",23);
+    Student s1("1111" , "Sami");
+    s1.addGrade(12);
+    double grade[] = {12,16,15,16};
+    s1.addGrade(grade , 4);
     s1.display();
     Student s2;
     s2.display();
 
     return 0;
 }
+
+
+/*
+git:
+git switch -c grades : on cree une nouvelle branche si il n est pas cree w mnruh 3layaa w kl shi 3mltlo commit mn abel bikun 3laya
+*/
