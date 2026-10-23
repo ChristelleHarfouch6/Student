@@ -15,6 +15,7 @@ Student(string id , string name , int age):id(id) , name(name) , age(age){
 Student(){
     id = "0000";
     name = "ABC";
+    age = 18;
     cout << "Etudiant " << id << " cree" << endl;
 }
 
